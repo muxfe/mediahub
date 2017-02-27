@@ -1,0 +1,17 @@
+{
+  "name": "mediahub",
+  "version": "1.0.0",
+  "description": "mediahub",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "muxfe",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "pm2": "^2.4.0",
+    "weui": "^1.0.0"
+  }
+}

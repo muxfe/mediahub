@@ -1,0 +1,14 @@
+extends ../layout
+block content
+  div(class="weui-gallery")
+    each val, index in imageList
+      span(class="weui-gallery__img", style="background-image: url(/r/image/" + index + ");")
+
+  script.
+    var images = document.querySelectorAll(".weui-gallery__img");
+    for (var i = 0; i < images.length; i++) {
+      var img = images[i];
+      img.addEventListener('click', function(){
+        this.parentElement.appendChild(document.querySelectorAll(".weui-gallery__img")[0])
+      });
+    }
