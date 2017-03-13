@@ -1,0 +1,6 @@
+extends ../layout
+block content
+  article(class="weui-article book-wrapper")
+    h1(class="book-title") #{bookTitle}
+    section(class="book-body")
+      p!= bookContent && bookContent.replace(/\n/g, '<br />')

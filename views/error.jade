@@ -4,7 +4,9 @@ block content
     div(class="weui-msg__icon-area")
       i(class="weui-icon-warn weui-icon_msg")
     div(class="weui-msg__text-area")
-      h2(class="weui-msg__title") Ooops! #{msg}
+      h2(class="weui-msg__title") Ooops!
+      h2(class="weui-msg__title" style="text-align:left;")
+        p!= message && message.replace(/\n/g, '<br />')
     div(class="weui-msg__opr-area")
       p(class="weui-btn-area")
         a(class="weui-btn weui-btn_primary", href="javascript:history.back();")= 返回

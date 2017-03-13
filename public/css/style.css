@@ -1,11 +1,35 @@
 
 body {
   font-size: 1em;
+  background-color: #f8f8f8;
 }
 
 video {
   margin: 0 auto;
   display: block;
+}
+
+.container .page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f8f8f8;
+}
+
+.page {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+}
+
+.page-header {
+  padding: 40px 40px 5px 40px;
+}
+
+.page-title {
+  margin-bottom: 15px;
 }
 
 .weui-cell {
@@ -14,4 +38,14 @@ video {
 
 .weui-gallery {
   display: block;
+}
+
+.book-wrapper {
+  background-color: #ececdf;
+  font-size: 3em;
+}
+
+.book-title {
+  text-align: center;
+  font-size: 30px;
 }

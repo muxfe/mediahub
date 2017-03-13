@@ -1,8 +1,29 @@
 extends ../layout
 block content
-  div(class="weui-cells")
-    each val, index in videoList
-      a(href='/video/' + index, target="_blank", class="weui-cell weui-cell_access")
-        div(class="weui-cell__bd")
-          p= index
-        div(class="weui-cell__ft")
+  div(class="page")
+    div(class="page-header")
+      h1(class="page-title") 视频列表
+    div(class="page-body")
+      div(class="weui-cells")
+        a(href='/video' + basePath, class="weui-cell weui-cell_access")
+          div(class="weui-cell__bd")
+            p
+              i(class="fa fa-folder-open") #{' .'}
+        a(href=prevPath, class="weui-cell weui-cell_access")
+          div(class="weui-cell__bd")
+            p
+              i(class="fa fa-folder-open") #{' ..'}
+        each val, index in videoList
+          - if (val.type === 'dir')
+            a(href='/video' + basePath + '/' + index, class="weui-cell weui-cell_access")
+              div(class="weui-cell__bd")
+                p
+                  i(class="fa fa-folder-open") #{' ' + val.filename}
+        each val, index in videoList
+          - if (val.type !== 'dir')
+            a(href='/video' + basePath + '/' + index, class="weui-cell weui-cell_access")
+              div(class="weui-cell__bd")
+                p
+                  i(class="fa fa-film") #{' ' + val.filename}
+
+          div(class="weui-cell__ft")

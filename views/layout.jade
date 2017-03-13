@@ -4,8 +4,28 @@ html(lang="en")
     title= pageTitle
     meta(http-equiv="Content-Type",content="text/html; charset=utf-8")
     link(type="text/css",rel="stylesheet",href="/css/weui.min.css")
+    link(type="text/css",rel="stylesheet",href="/css/font-awesome.min.css")
     link(type="text/css",rel="stylesheet",href="/css/style.css")
     script(src="/js/script.js", type="text/javascript")
   body
     div(class="container")
-      block content
+      div(class="page tabbar")
+        div(class="page__bd" style="height: 100%;")
+          div(class="weui-tab")
+            div(class="weui-tab__panel")
+              block content
+            div(class="weui-tabbar")
+              a(href="/file" class="weui-tabbar__item #{curNav === 'file' ? 'weui-bar__item_on' : ''}")
+                span(style="display:inline-block;position:relative;")
+                  img(src="/images/icon_tabbar.png" class="weui-tabbar__icon")
+                  span(class="weui-badge" style="position:absolute;top:-2px;right:-13px;") 8
+                p(class="weui-tabbar__label") 全部
+              a(href="/video" class="weui-tabbar__item #{curNav === 'video' ? 'weui-bar__item_on' : ''}")
+                img(src="/images/icon_tabbar.png" class="weui-tabbar__icon")
+                p(class="weui-tabbar__label") 影音
+              a(href="/image" class="weui-tabbar__item #{curNav === 'image' ? 'weui-bar__item_on' : ''}")
+                img(src="/images/icon_tabbar.png" class="weui-tabbar__icon")
+                p(class="weui-tabbar__label") 图片
+              a(href="/book" class="weui-tabbar__item #{curNav === 'book' ? 'weui-bar__item_on' : ''}")
+                img(src="/images/icon_tabbar.png" class="weui-tabbar__icon")
+                p(class="weui-tabbar__label") 小说

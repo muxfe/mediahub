@@ -2,10 +2,10 @@ extends ../layout
 block content
   div(class="page")
     div(class="page-header")
-      h1(class="page-title") 图片列表
+      h1(class="page-title") 小说列表
     div(class="page-body")
       div(class="weui-cells")
-        a(href='/image' + basePath, class="weui-cell weui-cell_access")
+        a(href='/book' + basePath, class="weui-cell weui-cell_access")
           div(class="weui-cell__bd")
             p
               i(class="fa fa-folder-open") #{' .'}
@@ -13,17 +13,17 @@ block content
           div(class="weui-cell__bd")
             p
               i(class="fa fa-folder-open") #{' ..'}
-        each val, index in list
+        each val, index in bookList
           - if (val.type === 'dir')
-            a(href='/image' + basePath + '/' + index, class="weui-cell weui-cell_access")
+            a(href='/book' + basePath + '/' + index, class="weui-cell weui-cell_access")
               div(class="weui-cell__bd")
                 p
                   i(class="fa fa-folder-open") #{' ' + val.filename}
-        each val, index in list
+        each val, index in bookList
           - if (val.type !== 'dir')
-            a(href='/image' + basePath + '/' + index, class="weui-cell weui-cell_access")
+            a(href='/book' + basePath + '/' + index, class="weui-cell weui-cell_access")
               div(class="weui-cell__bd")
                 p
-                  i(class="fa fa-image-o") #{' ' + val.filename}
+                  i(class="fa fa-file-text") #{' ' + val.filename}
 
           div(class="weui-cell__ft")

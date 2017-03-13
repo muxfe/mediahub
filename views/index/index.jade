@@ -1,0 +1,8 @@
+extends ../layout
+block content
+  div(class="weui-cells")
+    each val, index in navList
+      a(href=val.href, class="weui-cell weui-cell_access")
+        div(class="weui-cell__bd")
+          p= val.text
+        div(class="weui-cell__ft")

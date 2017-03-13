@@ -4,14 +4,20 @@
   "description": "mediahub",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "pm2 start mediahub.config.js",
+    "stop": "pm2 stop mediahub.config.js",
+    "restart": "pm2 restart mediahub.config.js",
+    "monit": "pm2 monit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "muxfe",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "lodash": "^4.17.4",
     "pm2": "^2.4.0",
+    "shortid": "^2.2.6",
     "weui": "^1.0.0"
   }
 }
